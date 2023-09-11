@@ -4,7 +4,7 @@ Welcome to the Node.js Practice Repository! This repository is a collection of s
 
 ## Getting Started
 
-1. Clone this repository to your local machine using `git clone https://github.com/praju-1/ReactJS.git`
+1. Clone this repository to your local machine using `https://github.com/praju-1/NodeJS.git`
 
 ## Running the Exercises
 
