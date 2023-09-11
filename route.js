@@ -1,12 +1,15 @@
+// importing require modules and packages
+
 const express = require("express").Router();
 const route = require("express").Router();
 const { registerValidation, loginValidation } = require('./validation');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
-
 const userModule = require('./module');
 
+
+// Creating API's using HTTP request
+// API for registration
 route.post("/register", async (req, res) => {
     const { error } = registerValidation(req.body);
     if (error) return res.status(404).send(error.details[0].message);
@@ -32,6 +35,7 @@ route.post("/register", async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+
     //login validation
     route.post("/login", async (req, res) => {
         const { error } = loginValidation(req.body);
@@ -57,6 +61,7 @@ route.post("/register", async (req, res) => {
     })
 
     // showdata to get data
+    // using below API we can access all data from database
     route.get("/showData", async (req, res) => {
         try {
             const showData = await userModule.find();
@@ -68,6 +73,7 @@ route.post("/register", async (req, res) => {
     })
 
     //Delete data
+    // particular id related data will be deleted
     route.delete("/delete", async (req, res) => {
         let id = req.query.id;
         try {
@@ -79,6 +85,7 @@ route.post("/register", async (req, res) => {
     })
 
     //update data
+    // update specified data using ID
     route.post("/update", async (req, res) => {
         let _id = req.body._id;
 
@@ -91,6 +98,7 @@ route.post("/register", async (req, res) => {
     })
 
     //showone user
+     // using below API we can access one specific data from database using ID
     route.get("/showOne", async (req, res) => {
         const id = req.query.id;
 
