@@ -1,5 +1,6 @@
 const fs = require('fs');
 const http = require('http');
+const path = require('path');
 
 http.createServer((req, res)=>{
     console.log("server is created");
@@ -32,5 +33,13 @@ http.createServer((req, res)=>{
         console.log('File opened');
         return res.end()
     })
+
+    // Creating Directory
+    fs.mkdir(path.join(__dirname, 'test'), (err) => {
+        if (err) {
+            return console.error(err);
+        }
+        console.log('Directory created successfully!');
+    });
 
 }).listen(4000);
