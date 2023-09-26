@@ -29,6 +29,7 @@ http.createServer((req, res) => {
     })
 
     //opening file
+    // fs.open(path, flags/mode, )
     fs.open('server.js', "r", (err) => {
         if (err) throw err
         console.log('File opened');
