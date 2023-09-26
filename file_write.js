@@ -20,6 +20,7 @@ fs.writeFile('input.txt', "Hello Good morning", (err) => {
         if (err) {
             return console.error(err);
         }
+        // toString method return the content of String
         console.log("\nAsynchronous read : " + data.toString());
     });
 });
