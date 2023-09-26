@@ -1,9 +1,5 @@
 const fs = require('fs');
 
-
-
-
-
 // Open a file for reading
 fs.open('example.txt', 'r', (err, fd) => {
     if (err) {
