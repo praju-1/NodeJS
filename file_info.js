@@ -8,7 +8,7 @@ fs.stat('input.txt', function (err, stats) {
    console.log(stats);
    console.log("Got file info successfully!");
    
-   // Check file type
+   // Check document type
    console.log("isFile ? " + stats.isFile());
    console.log("isDirectory ? " + stats.isDirectory());    
 });
