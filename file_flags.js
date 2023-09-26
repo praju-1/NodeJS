@@ -10,6 +10,7 @@ fs.readFile('readme.txt', 'utf8', (err, data) => {
 });
 
 // Write to a file
+// syntax
 // fs.writeFile(path, data, options, callback)
 fs.writeFile('example.txt', 'Hello, world!', 'utf8', (err) => {
   if (err) {
