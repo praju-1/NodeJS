@@ -2,8 +2,8 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-// const router = require('./route');
-const router = require('./route_new')
+const router = require('./route');
+// const router = require('./route_new')
 const env = require("dotenv");
 const postRoute = require("./post");
 
