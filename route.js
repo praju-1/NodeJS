@@ -97,6 +97,19 @@ route.post("/register", async (req, res) => {
         }
     })
 
+    // another way you can also use PUT method
+    // route.put("/update", async (req, res) => {
+    //     let _id = req.body._id;
+
+    //     try {
+    //         const updateData = await userModule.findByIdAndUpdate(_id, req.body);
+    //         res.send("Data updated successfully.")
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // })
+
+
     //showone user
      // using below API we can access one specific data from database using ID
     route.get("/showOne", async (req, res) => {
