@@ -26,8 +26,6 @@ app.get('/getuser', (req, res) => {
   res.send(req.cookies);
 });
 
-
-
 //Route for destroying cookie
 app.get('/logout', (req, res) => {
   //it will clear the userData cookie
