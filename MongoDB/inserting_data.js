@@ -1,9 +1,10 @@
 const { MongoClient } = require('mongodb');
 
+const env = require("dotenv");
+env.config();
+
 // MongoDB connection URL and database name
 // Bydefault it uses test database
-const url = 'mongodb+srv://prajakta:praju%40123@cluster0.jz314qu.mongodb.net/'; // Change the URL if your MongoDB server is running on a different host or port
-
 
 const dbName = 'test'; // Change the database name
 
@@ -15,7 +16,7 @@ const sampleData = [
 ];
 
 // Create a MongoClient and connect to the MongoDB server
-const client = new MongoClient(url);
+const client = new MongoClient(process.env.DB_connection);
 
 async function inserData() {
     try {
