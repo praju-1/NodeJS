@@ -1,14 +1,16 @@
 const { MongoClient } = require('mongodb');
+const env = require("dotenv");
+env.config();
 
-const url = 'mongodb+srv://prajakta:praju%40123@cluster0.jz314qu.mongodb.net/test';
 
 // Create a MongoClient and connect to the MongoDB server
-const client = new MongoClient(url);
+const client = new MongoClient(process.env.DB_connection);
 
 async function run() {
     try {
         // Connect to the MongoDB server
         await client.connect();
+        console.log("Connection created");
 
         const db = client.db(); // The database name can be specified here if needed
 
