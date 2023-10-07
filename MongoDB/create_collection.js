@@ -1,12 +1,11 @@
 // Import the mongoose library
 const mongoose = require('mongoose');
-
-// MongoDB connection URL
-const mongoURL = 'mongodb+srv://prajakta:praju%40123@cluster0.jz314qu.mongodb.net/'; //Replace with your MongoDB URL
+const env = require("dotenv");
+env.config();
 
 mongoose.set('strictQuery', false);
 // Create a new Mongoose connection
-mongoose.connect(mongoURL, {
+mongoose.connect(process.env.DB_connection, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
