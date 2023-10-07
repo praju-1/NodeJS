@@ -1,5 +1,6 @@
 const { MongoClient } = require('mongodb');
 const env = require("dotenv");
+const { log } = require('debug/src/browser');
 env.config();
 
 // Create a MongoClient and connect to the MongoDB server
@@ -14,13 +15,17 @@ async function run() {
 
 
         // Finding record from database
-        // const result = await db.collection('myDatabase').find({}).toArray();
+        const result = await db.collection('myDatabase').find({}).toArray();
+        console.log(result);
 
+        // Finding limited data 
+        // It only return 5 record using limit
+        const limit_data = await db.collection('myDatabase').find().limit(5).toArray();
+        console.log(limit_data);
 
         // Find some data 
-        const result = await db.collection('myDatabase').find({}, {projection: {_id : 0, name : 1}}).toArray()
-
-        console.log(result);
+        const some_data = await db.collection('myDatabase').find({}, {projection: {_id : 0, name : 1}}).toArray()
+        console.log(some_data);
 
     } catch (error) {
         console.error('Error:', error);
